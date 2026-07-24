@@ -220,7 +220,7 @@ __marimo__/
 .streamlit/secrets.toml
 
 
-.env 
+.env*
 .venv/
 __pycache
 __/ .chroma/ corpus/*.pdf

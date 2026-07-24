@@ -224,3 +224,4 @@ __marimo__/
 .venv/
 __pycache
 __/ .chroma/ corpus/*.pdf
+project1-detailed-build-guide.md

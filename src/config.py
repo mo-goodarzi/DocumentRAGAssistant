@@ -41,3 +41,9 @@ def as_dict() -> dict:
         "chunk_overlap": CHUNK_OVERLAP,
         "top_k": TOP_K,
     }
+
+
+
+
+
+

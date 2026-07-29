@@ -228,3 +228,5 @@ project1-detailed-build-guide.md
 experiments/*
 corpus/*
 .DS_Store
+.chroma/*
+.chroma*

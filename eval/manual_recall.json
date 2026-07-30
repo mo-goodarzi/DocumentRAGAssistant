@@ -1,0 +1,39 @@
+{
+  "q01": {
+    "hit": true,
+    "question": "What obligations apply to providers of high-risk AI systems?",
+    "category": "regulatory_vocabulary",
+    "retrieved": [
+      {
+        "rank": 1,
+        "source": "the_digital_service_act_2022.pdf",
+        "page": 23,
+        "distance": 0.4433
+      },
+      {
+        "rank": 2,
+        "source": "the_digital_service_act_2022.pdf",
+        "page": 26,
+        "distance": 0.4721
+      },
+      {
+        "rank": 3,
+        "source": "the_digital_service_act_2022.pdf",
+        "page": 27,
+        "distance": 0.4825
+      },
+      {
+        "rank": 4,
+        "source": "the_digital_service_act_2022.pdf",
+        "page": 64,
+        "distance": 0.4942
+      },
+      {
+        "rank": 5,
+        "source": "the_digital_service_act_2022.pdf",
+        "page": 24,
+        "distance": 0.4946
+      }
+    ]
+  }
+}

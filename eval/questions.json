@@ -1,0 +1,62 @@
+[
+  {
+    "id": "q01",
+    "category": "regulatory_vocabulary",
+    "question": "What obligations apply to providers of high-risk AI systems?",
+    "note": "Uses the Regulation's exact terms of art: 'provider', 'high-risk AI system'."
+  },
+  {
+    "id": "q02",
+    "category": "regulatory_vocabulary",
+    "question": "Which AI practices are prohibited under this Regulation?",
+    "note": "'Prohibited practices' is a chapter heading — should be an easy hit."
+  },
+  {
+    "id": "q03",
+    "category": "regulatory_vocabulary",
+    "question": "What is required for conformity assessment before a system is placed on the market?",
+    "note": "'Conformity assessment' and 'placing on the market' are both defined terms."
+  },
+  {
+    "id": "q04",
+    "category": "plain_language",
+    "question": "Can my company be fined for using face recognition in a shop?",
+    "note": "Answer is in the penalties article + biometric identification provisions, but the question says 'fined' and 'face recognition' where the text says 'administrative fines' and 'remote biometric identification'. Vocabulary gap is the point."
+  },
+  {
+    "id": "q05",
+    "category": "plain_language",
+    "question": "Do I have to tell people when they're talking to a chatbot?",
+    "note": "Transparency obligations. Corpus says 'natural persons are informed that they are interacting with an AI system'."
+  },
+  {
+    "id": "q06",
+    "category": "plain_language",
+    "question": "What happens to AI systems that were already being sold before these rules started?",
+    "note": "Transitional provisions. Plain phrasing of 'placed on the market before the date of application'."
+  },
+  {
+    "id": "q07",
+    "category": "plain_language",
+    "question": "Who checks that companies are following these rules?",
+    "note": "Governance / national competent authorities / market surveillance. Very plain phrasing."
+  },
+  {
+    "id": "q08",
+    "category": "cross_document",
+    "question": "How do the AI Act and GDPR interact when personal data is used to train a model?",
+    "note": "Needs chunks from BOTH documents to answer properly. Check whether retrieval returns a mix or tunnels into one."
+  },
+  {
+    "id": "q09",
+    "category": "cross_document",
+    "question": "What is the maximum fine under each of these regulations, and how do the amounts compare?",
+    "note": "AI Act penalties vs GDPR Article 83. A single-document answer here is a partial failure — note that in the diagnosis."
+  },
+  {
+    "id": "q10",
+    "category": "annex_or_table",
+    "question": "Which specific areas are listed as high-risk use cases in the annexes?",
+    "note": "Answer sits in Annex III as a structured list. Tests whether table/list extraction survived chunking."
+  }
+]

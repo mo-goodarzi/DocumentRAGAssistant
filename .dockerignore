@@ -1,0 +1,41 @@
+# Build context exclusions. Note this file is INDEPENDENT of .gitignore —
+# .chroma is excluded from git (a build artifact) but deliberately included
+# here, because the image ships with a pre-built index.
+
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+.git/
+.gitignore
+.github/
+
+# Never in the image. The key is passed at runtime.
+.env
+
+# Not needed once the index is built — the image queries .chroma, it does not
+# re-read the PDFs. Excluding them keeps the image tens of MB smaller.
+corpus/
+
+# Development-only
+experiments/
+eval/
+tests/
+notebooks/
+*.ipynb
+.ipynb_checkpoints/
+
+# Docs and local scratch
+README.md
+docs/
+*.md
+!requirements.txt
+test_api.sh
+page*.txt
+
+.DS_Store
+.vscode/
+.idea/

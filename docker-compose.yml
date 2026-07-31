@@ -1,0 +1,44 @@
+# Runs both services from the same image for local testing.
+#
+#   docker compose up --build
+#
+# UI  -> http://localhost:8501
+# API -> http://localhost:8000/docs
+#
+# Deployment uses the UI service only; this exists so you can exercise both
+# without rebuilding between them.
+
+services:
+  ui:
+    build: .
+    image: legal-rag:latest
+    environment:
+      MODE: ui
+      PORT: 8501
+      # Read from your shell / .env — never hardcoded here, since this file
+      # is committed.
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?set OPENAI_API_KEY in your environment}
+      CHAT_MODEL: ${CHAT_MODEL:-gpt-4o-mini}
+      TOP_K: ${TOP_K:-5}
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+
+  api:
+    build: .
+    image: legal-rag:latest
+    environment:
+      MODE: api
+      PORT: 8000
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?set OPENAI_API_KEY in your environment}
+      CHAT_MODEL: ${CHAT_MODEL:-gpt-4o-mini}
+      TOP_K: ${TOP_K:-5}
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped

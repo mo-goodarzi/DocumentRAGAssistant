@@ -1,0 +1,322 @@
+[
+  {
+    "id": "q01",
+    "category": "gdpr_definitions",
+    "answerable": true,
+    "question": "What is personal data under the GDPR?",
+    "ground_truth": "Personal data is any information relating to an identified or identifiable natural person. An identifiable person is one who can be identified directly or indirectly, including by reference to a name, identification number, location data, online identifier, or factors specific to that person's physical, physiological, genetic, mental, economic, cultural, or social identity.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 33
+  },
+  {
+    "id": "q02",
+    "category": "gdpr_principles",
+    "answerable": true,
+    "question": "What principles govern the processing of personal data under Article 5 of the GDPR?",
+    "ground_truth": "Personal data must be processed lawfully, fairly and transparently; collected for specified, explicit and legitimate purposes; adequate, relevant and limited to what is necessary; accurate and kept up to date; retained no longer than necessary; and processed with appropriate security. The controller is responsible for, and must be able to demonstrate, compliance with these principles.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 35
+  },
+  {
+    "id": "q03",
+    "category": "gdpr_lawfulness",
+    "answerable": true,
+    "question": "What are the lawful bases for processing personal data under the GDPR?",
+    "ground_truth": "Processing is lawful when at least one basis applies: consent; necessity for a contract or pre-contractual steps; compliance with a legal obligation; protection of vital interests; performance of a task in the public interest or exercise of official authority; or legitimate interests pursued by the controller or a third party, unless overridden by the data subject's interests or fundamental rights, especially where the data subject is a child.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 36
+  },
+  {
+    "id": "q04",
+    "category": "gdpr_consent",
+    "answerable": true,
+    "question": "What conditions must be met for valid consent under the GDPR?",
+    "ground_truth": "The controller must be able to demonstrate consent. A consent request included with other matters must be clearly distinguishable, intelligible, easily accessible, and written in clear and plain language. The data subject may withdraw consent at any time, withdrawal must be as easy as giving consent, and withdrawal does not affect prior lawful processing. Whether a service is made conditional on unnecessary processing must be considered when assessing whether consent was freely given.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 37
+  },
+  {
+    "id": "q05",
+    "category": "gdpr_children",
+    "answerable": true,
+    "question": "At what age can a child independently consent to an information society service under the GDPR?",
+    "ground_truth": "The default age is 16. For a child below 16, processing based on consent is lawful only where consent is given or authorised by the holder of parental responsibility. Member States may set a lower age, but not below 13, and controllers must make reasonable efforts to verify parental authorisation.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 37
+  },
+  {
+    "id": "q06",
+    "category": "gdpr_special_categories",
+    "answerable": true,
+    "question": "Which categories of personal data receive special protection under Article 9 of the GDPR?",
+    "ground_truth": "The protected categories are data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade-union membership; genetic data; biometric data used for unique identification; health data; and data concerning a person's sex life or sexual orientation. Their processing is prohibited unless a listed exception applies.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 37
+  },
+  {
+    "id": "q07",
+    "category": "gdpr_transparency",
+    "answerable": true,
+    "question": "How must controllers provide information and communications to data subjects under Article 12?",
+    "ground_truth": "Information and communications must be concise, transparent, intelligible, easily accessible, and use clear and plain language, particularly for children. They must normally be provided in writing or electronically, may be given orally when identity is proven, and must facilitate the exercise of data-subject rights. Responses are generally due within one month, subject to a possible two-month extension for complex or numerous requests.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 39
+  },
+  {
+    "id": "q08",
+    "category": "gdpr_access_right",
+    "answerable": true,
+    "question": "What information can a data subject obtain through the GDPR right of access?",
+    "ground_truth": "A data subject may obtain confirmation whether personal data are processed, access to the data, and information including the purposes, categories of data, recipients, retention period or criteria, rights to rectification, erasure, restriction and objection, the right to complain, the data source where not collected from the person, and meaningful information about automated decision-making. The controller must also provide a copy of the personal data being processed.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 43
+  },
+  {
+    "id": "q09",
+    "category": "gdpr_erasure",
+    "answerable": true,
+    "question": "When does the GDPR give a data subject the right to erasure?",
+    "ground_truth": "Erasure may be required where the data are no longer necessary, consent is withdrawn and no other legal basis exists, the person successfully objects, the data were unlawfully processed, erasure is required by law, or the data were collected in relation to information society services offered to a child. Exceptions include freedom of expression, legal obligations or public tasks, public health, archiving or research safeguards, and legal claims.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 43
+  },
+  {
+    "id": "q10",
+    "category": "gdpr_portability",
+    "answerable": true,
+    "question": "When does the right to data portability apply under the GDPR?",
+    "ground_truth": "It applies to personal data provided by the data subject where processing is based on consent or contract and is carried out by automated means. The person may receive the data in a structured, commonly used and machine-readable format and transmit them to another controller, including direct transmission where technically feasible, without adversely affecting the rights and freedoms of others.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 45
+  },
+  {
+    "id": "q11",
+    "category": "gdpr_automated_decisions",
+    "answerable": true,
+    "question": "What protection does Article 22 provide against automated decision-making?",
+    "ground_truth": "A data subject has the right not to be subject to a decision based solely on automated processing, including profiling, that produces legal effects or similarly significantly affects the person. Exceptions exist where the decision is necessary for a contract, authorised by law with safeguards, or based on explicit consent. In relevant cases, safeguards include human intervention, the ability to express a viewpoint, and the ability to contest the decision.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 46
+  },
+  {
+    "id": "q12",
+    "category": "gdpr_data_protection_by_design",
+    "answerable": true,
+    "question": "What does data protection by design and by default require?",
+    "ground_truth": "Controllers must implement appropriate technical and organisational measures, such as pseudonymisation, both when determining processing means and during processing, to integrate data-protection principles and safeguards. By default, only personal data necessary for each specific purpose should be processed, including limits on amount, extent, storage period and accessibility.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 48
+  },
+  {
+    "id": "q13",
+    "category": "gdpr_security",
+    "answerable": true,
+    "question": "What security measures does Article 32 require from controllers and processors?",
+    "ground_truth": "They must implement security appropriate to the risk, taking account of the state of the art, implementation costs, and the nature, scope, context and purposes of processing. Measures may include pseudonymisation and encryption, ongoing confidentiality, integrity, availability and resilience, timely restoration after incidents, and regular testing and evaluation of security controls.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 49
+  },
+  {
+    "id": "q14",
+    "category": "gdpr_breach_notification",
+    "answerable": true,
+    "question": "When must a controller notify a supervisory authority of a personal data breach?",
+    "ground_truth": "The controller must notify the competent supervisory authority without undue delay and, where feasible, within 72 hours after becoming aware of the breach, unless the breach is unlikely to result in a risk to individuals' rights and freedoms. A late notification must explain the delay and include the required details about the breach, likely consequences and mitigation measures.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 52
+  },
+  {
+    "id": "q15",
+    "category": "gdpr_fines",
+    "answerable": true,
+    "question": "What are the maximum administrative fines available under the GDPR?",
+    "ground_truth": "Depending on the infringement, fines may reach up to EUR 10 million or 2% of the undertaking's total worldwide annual turnover for the preceding financial year, whichever is higher, or for more serious infringements up to EUR 20 million or 4% of worldwide annual turnover, whichever is higher.",
+    "expected_source": "gdpr_2016.pdf",
+    "expected_page": 82
+  },
+  {
+    "id": "q16",
+    "category": "dsa_definitions",
+    "answerable": true,
+    "question": "What is an online platform under the Digital Services Act?",
+    "ground_truth": "An online platform is a hosting service that, at the request of a recipient, stores and disseminates information to the public, unless that dissemination is only a minor and purely ancillary feature of another service and cannot be used independently for objective technical reasons, and the exclusion is not being used to circumvent the Regulation.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 42
+  },
+  {
+    "id": "q17",
+    "category": "dsa_mere_conduit",
+    "answerable": true,
+    "question": "When is a mere-conduit provider exempt from liability under the DSA?",
+    "ground_truth": "A provider that transmits information or provides access to a communication network is not liable for transmitted information when it does not initiate the transmission, does not select the receiver, and does not select or modify the transmitted information. Automatic, intermediate and transient storage solely for transmission may be covered where it is not retained longer than reasonably necessary.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 44
+  },
+  {
+    "id": "q18",
+    "category": "dsa_hosting_liability",
+    "answerable": true,
+    "question": "When can a hosting provider rely on the DSA hosting liability exemption?",
+    "ground_truth": "A hosting provider is not liable for information stored at a recipient's request where it lacks actual knowledge of illegal activity or content and, for damages claims, lacks awareness of facts making illegality apparent; or, after obtaining such knowledge or awareness, acts expeditiously to remove or disable access. The exemption does not apply when the recipient acts under the provider's authority or control.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 45
+  },
+  {
+    "id": "q19",
+    "category": "dsa_no_general_monitoring",
+    "answerable": true,
+    "question": "Does the DSA impose a general monitoring obligation on intermediary service providers?",
+    "ground_truth": "No. Providers may not be subjected to a general obligation to monitor transmitted or stored information or actively seek facts indicating illegal activity. This does not prevent specific monitoring obligations in individual cases imposed consistently with Union law.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 45
+  },
+  {
+    "id": "q20",
+    "category": "dsa_orders_illegal_content",
+    "answerable": true,
+    "question": "What information must an order to act against illegal content contain under Article 9 of the DSA?",
+    "ground_truth": "The order must identify its legal basis, explain why the information is illegal by reference to Union or compliant national law, identify the issuing authority, clearly locate the content such as with exact URLs and any necessary additional information, explain available redress, and specify where applicable which authority should receive information on the order's effect. It must be transmitted to the provider's designated electronic contact point.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 46
+  },
+  {
+    "id": "q21",
+    "category": "dsa_terms_conditions",
+    "answerable": true,
+    "question": "What must intermediary-service terms and conditions disclose under the DSA?",
+    "ground_truth": "They must explain restrictions imposed on recipient-provided information, including content-moderation policies, procedures, measures and tools, algorithmic decision-making, human review and internal complaint procedures. The information must be clear, plain, intelligible, user-friendly, unambiguous, publicly available, easily accessible and machine-readable, with significant changes communicated to users.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 49
+  },
+  {
+    "id": "q22",
+    "category": "dsa_transparency_reporting",
+    "answerable": true,
+    "question": "What must intermediary service providers report about content moderation under Article 15?",
+    "ground_truth": "At least annually, providers must publish clear, comprehensible, machine-readable reports covering applicable matters such as authority orders, notices, actions taken, own-initiative moderation, use and accuracy of automated tools, complaints, reversals and suspension measures. The exact reporting elements vary by service category.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 49
+  },
+  {
+    "id": "q23",
+    "category": "dsa_notice_action",
+    "answerable": true,
+    "question": "What must a DSA notice-and-action mechanism allow users to submit?",
+    "ground_truth": "Hosting providers must provide an easily accessible, user-friendly electronic mechanism for notices of allegedly illegal content. A notice should explain why the information is illegal, identify the exact electronic location, provide the notifier's name and email except for specified offences, and include a good-faith statement that the information is accurate and complete. Sufficiently precise notices can give rise to actual knowledge or awareness.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 50
+  },
+  {
+    "id": "q24",
+    "category": "dsa_statement_reasons",
+    "answerable": true,
+    "question": "When must a hosting provider give a statement of reasons for a content restriction?",
+    "ground_truth": "When a hosting provider restricts information supplied by a recipient on the ground that it is illegal or incompatible with its terms, it must provide the affected recipient with a clear and specific statement of reasons. This applies to restrictions such as removal, disabling access, demotion, suspension or termination of payments, service restrictions, or account suspension or termination, subject to limited exceptions.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 51
+  },
+  {
+    "id": "q25",
+    "category": "dsa_internal_complaints",
+    "answerable": true,
+    "question": "What internal complaint system must online platforms provide under Article 20?",
+    "ground_truth": "Online platforms must provide recipients, free of charge and electronically, access to an effective internal complaint-handling system for at least six months after a moderation decision. Complaints must be handled timely, non-discriminatorily, diligently and non-arbitrarily, with decisions not taken solely through automation and with prompt reversal where the original restriction is found unjustified.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 53
+  },
+  {
+    "id": "q26",
+    "category": "dsa_trusted_flaggers",
+    "answerable": true,
+    "question": "Who can be awarded trusted-flagger status under the DSA?",
+    "ground_truth": "The Digital Services Coordinator of the Member State where the applicant is established may award trusted-flagger status to an entity that has particular expertise and competence in detecting and notifying illegal content, is independent from online-platform providers, and carries out notice activities diligently, accurately and objectively.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 56
+  },
+  {
+    "id": "q27",
+    "category": "dsa_misuse_suspension",
+    "answerable": true,
+    "question": "When may an online platform suspend users or complainants for misuse under Article 23?",
+    "ground_truth": "Platforms must suspend, for a reasonable period and after a prior warning, recipients that frequently provide manifestly illegal content. They must also suspend persons or entities that frequently submit manifestly unfounded notices or complaints. Decisions must be made case by case, timely, diligently and objectively, considering relevant facts and circumstances.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 57
+  },
+  {
+    "id": "q28",
+    "category": "dsa_dark_patterns",
+    "answerable": true,
+    "question": "What does the DSA prohibit concerning online-interface design?",
+    "ground_truth": "Online platforms may not design, organise or operate interfaces in a way that deceives or manipulates recipients or otherwise materially distorts or impairs their ability to make free and informed decisions. The prohibition does not cover practices already governed by the Unfair Commercial Practices Directive or the GDPR.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 58
+  },
+  {
+    "id": "q29",
+    "category": "dsa_advertising_transparency",
+    "answerable": true,
+    "question": "What information must an online platform show for each advertisement under Article 26?",
+    "ground_truth": "For each advertisement, recipients must be able to identify clearly and in real time that it is an advertisement, the person or entity on whose behalf it is presented, the person or entity that paid for it when different, and meaningful information about the main parameters used to determine the recipient and, where applicable, how those parameters can be changed.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 59
+  },
+  {
+    "id": "q30",
+    "category": "dsa_recommender_systems",
+    "answerable": true,
+    "question": "What transparency is required for recommender systems under Article 27 of the DSA?",
+    "ground_truth": "Platforms using recommender systems must explain in clear and intelligible language the main parameters used and the options recipients have to modify or influence them. The explanation must identify the most significant criteria and the reasons for their relative importance. Where several options are available, users must be able to select and modify their preferred option easily from the relevant interface.",
+    "expected_source": "the_digital_service_act_2022.pdf",
+    "expected_page": 59
+  },
+  {
+    "id": "q31",
+    "category": "unanswerable_external_statistics",
+    "answerable": false,
+    "question": "How many GDPR complaints were filed in Italy in 2025?",
+    "ground_truth": "The two provided regulations do not contain national complaint statistics for Italy in 2025.",
+    "expected_source": null,
+    "expected_page": null,
+    "_comment": "Intentionally unanswerable from the two provided PDF files."
+  },
+  {
+    "id": "q32",
+    "category": "unanswerable_company_policy",
+    "answerable": false,
+    "question": "What is Meta's current internal retention period for deleted Instagram messages?",
+    "ground_truth": "The two provided regulations do not state Meta's internal retention policy for deleted Instagram messages.",
+    "expected_source": null,
+    "expected_page": null,
+    "_comment": "Intentionally unanswerable from the two provided PDF files."
+  },
+  {
+    "id": "q33",
+    "category": "unanswerable_case_law",
+    "answerable": false,
+    "question": "Which company received the largest final GDPR fine worldwide in 2026?",
+    "ground_truth": "The provided regulations establish legal rules but do not contain current 2026 enforcement rankings or final fine records.",
+    "expected_source": null,
+    "expected_page": null,
+    "_comment": "Intentionally unanswerable from the two provided PDF files."
+  },
+  {
+    "id": "q34",
+    "category": "unanswerable_implementation",
+    "answerable": false,
+    "question": "Which algorithm does TikTok currently use to rank videos for each European user?",
+    "ground_truth": "The provided regulations require certain transparency and risk controls but do not disclose TikTok's current proprietary ranking algorithm.",
+    "expected_source": null,
+    "expected_page": null,
+    "_comment": "Intentionally unanswerable from the two provided PDF files."
+  },
+  {
+    "id": "q35",
+    "category": "unanswerable_legal_advice",
+    "answerable": false,
+    "question": "Will a specific unnamed company's data-processing activity definitely be lawful in every EU Member State?",
+    "ground_truth": "The documents provide general legal requirements, but the question lacks the facts needed for a legal assessment and asks for a universal conclusion not contained in the regulations.",
+    "expected_source": null,
+    "expected_page": null,
+    "_comment": "Intentionally unanswerable from the two provided PDF files."
+  }
+]

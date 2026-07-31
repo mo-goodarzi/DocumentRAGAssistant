@@ -18,6 +18,7 @@ COLLECTION_NAME = os.getenv("COLLECTION_NAME", "documents")
 
 EMBED_MODEL = os.getenv("EMBED_MODEL", "text-embedding-3-small")
 CHAT_MODEL = os.getenv("CHAT_MODEL", "gpt-4o-mini")
+JUDGE_MODEL = os.getenv("JUDGE_MODEL", "gpt-4o-mini")
 
 CHUNK_TOKENS = int(os.getenv("CHUNK_TOKENS", "500"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "80"))

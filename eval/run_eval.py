@@ -129,15 +129,16 @@ def run_ragas(rows: list[dict]) -> dict:
     'this is not addressed in these documents' has no such claims. Including
     them produces a meaningless number that drags the average around.
     """
-    from openai import OpenAI
+    from openai import AsyncOpenAI, OpenAI
     from ragas import EvaluationDataset, SingleTurnSample, evaluate
+    from ragas.embeddings import embedding_factory
     from ragas.llms import llm_factory
     from ragas.metrics import (
         Faithfulness,
         LLMContextPrecisionWithReference,
         LLMContextRecall,
-        ResponseRelevancy,
     )
+    from ragas.metrics.collections import AnswerRelevancy
 
     scored_rows = [r for r in rows if r.get("answerable", True)]
     print(f"\n  scoring {len(scored_rows)} answerable questions "
@@ -163,12 +164,26 @@ def run_ragas(rows: list[dict]) -> dict:
             LLMContextRecall(),
             LLMContextPrecisionWithReference(),
             Faithfulness(),
-            ResponseRelevancy(),
         ],
         llm=judge,
     )
 
     df = result.to_pandas()
+
+    # AnswerRelevancy lives in ragas' modern metrics.collections API, which
+    # needs an async LLM/embeddings pair and runs outside evaluate() — the
+    # legacy ResponseRelevancy in ragas.metrics only accepts the deprecated
+    # langchain-style embeddings interface.
+    async_judge = llm_factory(config.JUDGE_MODEL, client=AsyncOpenAI())
+    async_embeddings = embedding_factory(
+        "openai", config.EMBED_MODEL, client=AsyncOpenAI()
+    )
+    relevancy_metric = AnswerRelevancy(llm=async_judge, embeddings=async_embeddings)
+    relevancy_results = relevancy_metric.batch_score([
+        {"user_input": r["question"], "response": r["response"]}
+        for r in scored_rows
+    ])
+    df["answer_relevancy"] = [r.value for r in relevancy_results]
 
     # Attach per-question scores back onto the rows for failure analysis.
     metric_cols = [c for c in df.columns

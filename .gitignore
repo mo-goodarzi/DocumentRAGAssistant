@@ -232,3 +232,4 @@ corpus/*
 .chroma*
 
 eval/results/*
+.claude*

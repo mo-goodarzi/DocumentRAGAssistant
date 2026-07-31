@@ -230,3 +230,5 @@ corpus/*
 .DS_Store
 .chroma/*
 .chroma*
+
+eval/results/*

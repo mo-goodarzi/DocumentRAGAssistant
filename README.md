@@ -166,23 +166,3 @@ before/after comparison would mean nothing.
   is the deterministic control, and it only checks retrieval, not the answer.
 
 ---
-
-## What I would do next
-
-- Article-aware chunking: split on `Article N` / `Recital N` boundaries so a chunk holds
-  one complete provision instead of the tail of one and the head of the next.
-- A cross-encoder reranker over a larger candidate set — retrieve 20, rerank, keep 5.
-  Should move context precision without retrieving anything new.
-- Query rewriting for the vocabulary gap between how people ask and how regulations are
-  written.
-
----
-
-<!-- TODO before publishing:
-     [ ] Replace YOUR-APP and YOUR-USERNAME
-     [ ] Record and commit docs/demo.gif
-     [ ] Fill every NN and every — in the results table
-     [ ] Write the experiment section
-     [ ] Follow the setup steps on a fresh clone and confirm they work verbatim
-     [ ] Pin the repo on your GitHub profile
--->

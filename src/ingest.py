@@ -42,8 +42,8 @@ def get_collection(rebuild: bool = False):
 def embed(texts: list[str]) -> list[list[float]]:
     """Embed a batch of texts in one API call.
 
-    Batching matters: the AI Act alone is ~600 chunks. One request per chunk
-    means 600 round trips and rate-limit backoff; batches of ~96 means seven.
+    Batching matters: GDPR alone is ~400 chunks. One request per chunk means
+    hundreds of round trips and rate-limit backoff; batches of ~96 means a few.
     """
     response = client.embeddings.create(model=config.EMBED_MODEL, input=texts)
     # Sort by index — the API does not guarantee response order matches input.

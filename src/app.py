@@ -37,7 +37,7 @@ DEMO_EXAMPLES = [
     "Are dark patterns banned on online platforms?",
 ]
 
-st.set_page_config(page_title="Document Assistant", page_icon="§", layout="centered")
+st.set_page_config(page_title="Document RAG Assistant", page_icon="§", layout="centered")
 
 st.markdown("""
 <style>
@@ -119,7 +119,7 @@ def set_question(text: str) -> None:
 # Mode
 # --------------------------------------------------------------------------
 
-st.title("Document Assistant")
+st.title("Document RAG Assistant")
 
 mode = st.radio(
     "Source",

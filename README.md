@@ -1,7 +1,9 @@
-# EU Regulation Assistant
+# Document RAG Assistant
 
-Question answering over EU AI regulation, where every claim is numbered back to the
-passage it came from.
+Question answering over PDF documents, where every claim is numbered back to the
+passage it came from. Ships with a built-in demo over EU regulation (GDPR, the Digital
+Services Act) and a mode where you upload your own PDFs and ask questions about them
+instead.
 
 **[Live demo](https://domainragassistant-production.up.railway.app/)** · Built with Python, Chroma, OpenAI,
 FastAPI, Streamlit, Docker
@@ -9,14 +11,19 @@ FastAPI, Streamlit, Docker
 
 ## What it does
 
-Ask a question about EU AI regulation and get an answer built only from the indexed
-documents, with a citation on every factual sentence. Open any citation to read the
-original passage and check the claim yourself.
+Ask a question and get an answer built only from the indexed documents, with a citation
+on every factual sentence. Open any citation to read the original passage and check the
+claim yourself.
 
 When the documents do not contain the answer, it says so rather than guessing — including
-when the question assumes something the regulation does not say.
+when the question assumes something the source material does not say.
 
-**Indexed corpus:** the_digital_service_act_2022.pdf, GDPR_2016
+Two modes:
+- **Demo** — a pre-built index over a fixed EU regulation corpus, shared and read-only.
+- **Upload** — bring your own PDFs. Each visitor gets an isolated, per-session index that
+  is deleted on request and swept automatically after a TTL.
+
+**Demo corpus:** the_digital_service_act_2022.pdf, GDPR_2016
 
 
 ---
@@ -104,8 +111,8 @@ harder evaluation set is a prerequisite rather than an optional refinement.
 ## Running it
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/legal-rag
-cd legal-rag
+git clone https://github.com/mo-goodarzi/EU_Regulation_Assistant
+cd EU_Regulation_Assistant
 
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
@@ -121,8 +128,8 @@ streamlit run src/app.py
 **Docker:**
 
 ```bash
-docker build -t legal-rag .
-docker run -p 8501:8501 -e OPENAI_API_KEY=$OPENAI_API_KEY legal-rag
+docker build -t document-rag-assistant .
+docker run -p 8501:8501 -e OPENAI_API_KEY=$OPENAI_API_KEY document-rag-assistant
 ```
 
 The image ships with a pre-built index rather than embedding at startup — re-embedding on
@@ -161,8 +168,11 @@ before/after comparison would mean nothing.
 
 - **Not legal advice.** A retrieval system over regulatory text, nothing more.
 - **No OCR.** Scanned PDFs without a text layer are skipped at ingestion.
-- **English only**, and only the documents listed above. Questions outside that corpus are
-  refused by design, not answered from the model's general knowledge.
+- **English only.** In demo mode, questions outside the indexed corpus are refused by
+  design rather than answered from the model's general knowledge; the same holds for
+  uploaded documents in upload mode.
+- **Uploaded documents are not persisted.** Session collections live on local disk and
+  are not backed up — a redeploy or restart loses them, by design.
 - **Evaluated on NN questions** written by one person. Small, and reflects my own sense of
   what matters in these documents.
 - **Chunks do not span page boundaries**, so a provision split across a page break is

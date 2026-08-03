@@ -51,14 +51,14 @@ def cost_of(response) -> float:
             + u.completion_tokens * config.PRICE_OUT) / 1_000_000
 
 
-def answer(question: str, k: int | None = None) -> Answer:
+def answer(question: str, k: int | None = None, collection=None) -> Answer:
     """Retrieve, then generate an answer grounded in what came back.
 
     temperature=0 because this is an extraction task, not a creative one: given
     the same excerpts, the same question should produce the same answer. Any
     variation here is noise that would also make the step 7 eval unrepeatable.
     """
-    sources = retrieve(question, k=k)
+    sources = retrieve(question, k=k, collection=collection)
 
     if not sources:
         return Answer(
@@ -89,13 +89,13 @@ def answer(question: str, k: int | None = None) -> Answer:
     )
 
 
-def answer_stream(question: str, k: int | None = None):
+def answer_stream(question: str, k: int | None = None, collection=None):
     """Yield (sources, token) — sources once, then text as it arrives.
 
     Needed by the Streamlit UI in step 10, where waiting on a full response
     feels broken. Usage data is not available when streaming, so no cost here.
     """
-    sources = retrieve(question, k=k)
+    sources = retrieve(question, k=k, collection=collection)
     yield sources, None
 
     if not sources:

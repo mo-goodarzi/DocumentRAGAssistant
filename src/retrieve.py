@@ -29,19 +29,20 @@ def get_collection():
     ).get_collection(name=config.COLLECTION_NAME)
 
 
-def retrieve(question: str, k: int | None = None) -> list[Source]:
+def retrieve(question: str, k: int | None = None, collection=None) -> list[Source]:
     """Top-k chunks for a question, most relevant first.
 
     The question must be embedded with the same model used at ingestion —
     both read config.EMBED_MODEL so they cannot drift apart.
     """
     k = k or config.TOP_K
+    collection = collection if collection is not None else get_collection()
 
     query_embedding = client.embeddings.create(
         model=config.EMBED_MODEL, input=[question]
     ).data[0].embedding
 
-    results = get_collection().query(
+    results = collection.query(
         query_embeddings=[query_embedding],
         n_results=k,
         include=["documents", "metadatas", "distances"],

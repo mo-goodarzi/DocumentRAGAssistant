@@ -33,6 +33,15 @@ PRICE_OUT = float(os.getenv("PRICE_OUT", "0.60"))
 PRICE_EMBED = float(os.getenv("PRICE_EMBED", "0.02"))
 
 
+
+# Runtime upload limits. These are cost controls as much as safety controls:
+# every page a stranger uploads is embedding spend on your key.
+MAX_UPLOAD_MB = float(os.getenv("MAX_UPLOAD_MB", "10"))
+MAX_PAGES_PER_FILE = int(os.getenv("MAX_PAGES_PER_FILE", "200"))
+MAX_FILES_PER_SESSION = int(os.getenv("MAX_FILES_PER_SESSION", "5"))
+SESSION_TTL_HOURS = float(os.getenv("SESSION_TTL_HOURS", "6"))
+
+
 def as_dict() -> dict:
     """The knobs that affect results — dumped into every eval results file."""
     return {

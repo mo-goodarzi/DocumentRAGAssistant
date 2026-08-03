@@ -55,41 +55,49 @@ things in this build exist to make that failure visible:
 
 ## Results
 
-Evaluated on **NN hand-written question/answer pairs** covering four question types plus
-unanswerable controls. The test set was written by hand rather than generated: questions
-produced by a model from the corpus inherit the corpus's vocabulary, which is exactly the
-case retrieval already handles well.
 
-<!-- TODO: fill from eval/results/*.json once the RAGAS run completes.
-     Delete any row you do not have a real number for. Do not estimate. -->
+Evaluated on **30 hand-written question/answer pairs** plus 5 unanswerable controls,
+scored with RAGAS.
 
-| Metric | Baseline | After *(change)* | Δ |
-|---|---|---|---|
-| Context recall | — | — | — |
-| Context precision | — | — | — |
-| Faithfulness | — | — | — |
-| Response relevancy | — | — | — |
-| Page-match recall@5 | 0.93 | — | — |
-| Refusal rate (unanswerable) | 1.00 | — | — |
+| Metric | Score |
+|---|---|
+| Context recall | 0.975 |
+| Context precision | 0.949 |
+| Faithfulness | 0.996 |
+| Answer relevancy | 0.883 |
+| Page-match recall@5 | 0.933 |
+| Refusal rate (unanswerable) | 1.000 |
+| Cost per query | $0.0005 |
 
-**Refusal rate 5/5.** On unanswerable questions and false-premise questions — including
-one asking which article bans AI in agriculture, which does not exist — the system
-declined and named what was missing rather than inventing a provision.
+**Faithfulness 0.996** — answers are almost entirely supported by the retrieved
+passages. Combined with a 5/5 refusal rate on unanswerable and false-premise
+questions, including one asking which article bans AI in agriculture, the system
+does not invent provisions.
 
-**Page-match recall@5 = 0.93** is computed without an LLM judge: each test question
-records the page where the answer actually lives, and the check is simply whether a chunk
-from that page (±1) appeared in the retrieved set. It exists as a control on the
-LLM-judged metrics — when a deterministic check and a model's judgement disagree, one of
-them is wrong and it is worth knowing which.
+**Answer relevancy 0.883 is the outlier, and the interesting one.** Retrieval and
+grounding are near-ceiling while relevancy trails by roughly ten points — the
+answers are well-supported but not always well-aimed at what was asked. That points
+at generation, not retrieval: a prompt and answer-shaping problem rather than a
+search problem.
+
+### On the high scores
+
+These numbers are higher than a naive pipeline should produce, and the reason is the
+test set rather than the system. Each question was written against a specific
+provision using that provision's vocabulary, which is the case dense retrieval
+handles best. 28 of 30 questions score exactly 1.0 on context recall.
+
+A harder test set — questions phrased the way a non-lawyer would ask them, questions
+whose answers span two documents, questions answered by tables in the annexes —
+would produce lower and more informative scores. That is the next piece of work, and
+it has to come before any retrieval change can be meaningfully measured.
 
 ### The experiment
 
-<!-- TODO: write this after step 8. Structure:
-     - what you changed and why you expected it to help
-     - what moved, what didn't
-     - 2-3 specific questions that flipped, with the retrieved pages before/after
-     If the change made things worse, say so and explain the diagnosis. A
-     documented negative result reads as more senior than a clean win. -->
+Not yet run. With context recall at 0.975 there is no measurable headroom, so a
+harder evaluation set is a prerequisite rather than an optional refinement.
+
+
 
 ---
 

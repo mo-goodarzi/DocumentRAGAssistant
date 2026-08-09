@@ -54,9 +54,7 @@ things in this build exist to make that failure visible:
 | Vector store | Chroma, cosine space, persistent | Cosine is set explicitly at collection creation — Chroma's default is L2, which ranks differently. |
 | Generation | `gpt-4o-mini`, temperature 0 | Extraction task, not a creative one. The same excerpts must produce the same answer, or the evaluation is not repeatable. |
 
-<!-- TODO: replace the ASCII diagram with a real one (Excalidraw → PNG, or a
-     Mermaid block, which GitHub renders natively). It reads better and takes
-     ten minutes. -->
+
 
 ---
 

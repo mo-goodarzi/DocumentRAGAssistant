@@ -171,7 +171,7 @@ before/after comparison would mean nothing.
   uploaded documents in upload mode.
 - **Uploaded documents are not persisted.** Session collections live on local disk and
   are not backed up — a redeploy or restart loses them, by design.
-- **Evaluated on NN questions** written by one person. Small, and reflects my own sense of
+- **Evaluated on 30 questions** written by one person. Small, and reflects my own sense of
   what matters in these documents.
 - **Chunks do not span page boundaries**, so a provision split across a page break is
   split across chunks. Deliberate — see the architecture table — but it is a real cost.
